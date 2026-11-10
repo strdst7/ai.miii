@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "0.0.0.0:7077:7077"
+    environment:
+      NODE_ENV: production
+      PORT: "7077"
+      HOSTNAME: 0.0.0.0
+    restart: unless-stopped

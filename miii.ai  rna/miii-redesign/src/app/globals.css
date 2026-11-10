@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Silkscreen:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-pixel: "Silkscreen", ui-monospace, monospace;
+}
+
+@property --b1x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+@property --b1y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 55%;
+}
+@property --b2x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 92%;
+}
+@property --b2y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 18%;
+}
+@property --b3x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 72%;
+}
+@property --b3y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 90%;
+}
+@property --b4x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 40%;
+}
+@property --b4y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+@property --c1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #c8b4f0;
+}
+@property --c2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f5e090;
+}
+@property --c3 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f7e89c;
+}
+@property --c4 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d4bcf6;
+}
+
+@keyframes meshFlow {
+  0% {
+    --b1x: 5%;
+    --b1y: 55%;
+    --b2x: 92%;
+    --b2y: 18%;
+    --b3x: 72%;
+    --b3y: 90%;
+    --b4x: 40%;
+    --b4y: 5%;
+  }
+  15% {
+    --b1x: 45%;
+    --b1y: 22%;
+    --b2x: 60%;
+    --b2y: 72%;
+    --b3x: 88%;
+    --b3y: 35%;
+    --b4x: 12%;
+    --b4y: 58%;
+  }
+  30% {
+    --b1x: 12%;
+    --b1y: 82%;
+    --b2x: 85%;
+    --b2y: 8%;
+    --b3x: 30%;
+    --b3y: 92%;
+    --b4x: 78%;
+    --b4y: 20%;
+  }
+  45% {
+    --b1x: 68%;
+    --b1y: 45%;
+    --b2x: 22%;
+    --b2y: 60%;
+    --b3x: 82%;
+    --b3y: 18%;
+    --b4x: 50%;
+    --b4y: 88%;
+  }
+  60% {
+    --b1x: 8%;
+    --b1y: 18%;
+    --b2x: 90%;
+    --b2y: 82%;
+    --b3x: 48%;
+    --b3y: 55%;
+    --b4x: 20%;
+    --b4y: 35%;
+  }
+  75% {
+    --b1x: 72%;
+    --b1y: 78%;
+    --b2x: 35%;
+    --b2y: 12%;
+    --b3x: 15%;
+    --b3y: 70%;
+    --b4x: 88%;
+    --b4y: 42%;
+  }
+  90% {
+    --b1x: 28%;
+    --b1y: 38%;
+    --b2x: 78%;
+    --b2y: 55%;
+    --b3x: 62%;
+    --b3y: 28%;
+    --b4x: 35%;
+    --b4y: 75%;
+  }
+  100% {
+    --b1x: 5%;
+    --b1y: 55%;
+    --b2x: 92%;
+    --b2y: 18%;
+    --b3x: 72%;
+    --b3y: 90%;
+    --b4x: 40%;
+    --b4y: 5%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #d4c8f0;
+  color: #18112c;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background-color: #d4c8f0;
+}
+
+.gradient-canvas {
+  background-color: var(--base-bg, #d4c8f0);
+  background-image:
+    radial-gradient(circle 58vmax at var(--b1x) var(--b1y), var(--c1), transparent 70%),
+    radial-gradient(circle 54vmax at var(--b2x) var(--b2y), var(--c2), transparent 68%),
+    radial-gradient(circle 56vmax at var(--b3x) var(--b3y), var(--c3), transparent 72%),
+    radial-gradient(circle 50vmax at var(--b4x) var(--b4y), var(--c4), transparent 68%);
+  animation: meshFlow 38s ease-in-out infinite;
+  transition: background-color 0.8s ease;
+}
+
+.glass-obsidian {
+  background: rgba(18, 14, 34, 0.86);
+  backdrop-filter: blur(22px) saturate(145%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 20px 50px rgba(18, 12, 38, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-obsidian-soft {
+  background: rgba(20, 16, 40, 0.74);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.glass-frosted {
+  background: rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow: 0 12px 32px rgba(28, 18, 56, 0.08);
+}
+
+.glass-chrome {
+  background: rgba(18, 14, 34, 0.42);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+@keyframes livePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(110, 231, 183, 0.7);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 5px rgba(110, 231, 183, 0);
+  }
+}
+
+.fp-apply-live {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #6ee7b7;
+  margin-right: 7px;
+  animation: livePulse 2.2s ease-in-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
+   OS-aware 3D Command Key icon
+   --------------------------------------------------------------------------
+   One unified keycap whose geometry, materials, lighting, shadows and
+   proportions never change. Only the brand glyph painted on the key changes
+   (Android robot / Windows logo / Linux Tux / macOS Command symbol).
+
+   Everything inside the icon is sized in `cqw` against the component's own
+   inline-size container, so a single `width` scales depth, bevels, blur radii
+   and glyph size together — the icon stays optically identical at 32px and at
+   320px, on desktop, tablet and mobile.
+   ========================================================================== */
+
+.command-key-3d {
+  /* Public knob — overridden by the `size` prop (numbers become px). */
+  --ck-width: clamp(52px, 12vw, 128px);
+
+  /* Keycap silhouette + viewing angle.
+     The radius is expressed in cqw (not %) so the cap and its extruded side
+     wall — which have different heights — share identical corner curvature. */
+  --ck-radius: 26cqw;
+  --ck-tilt: 16deg;
+
+  /* Soft-touch light keycap, lit from the top-left */
+  --ck-cap-hi: #fdfdff;
+  --ck-cap-mid: #edecf4;
+  --ck-cap-lo: #c8c6d8;
+  --ck-side-hi: #7e7d91;
+  --ck-side-mid: #4a4959;
+  --ck-side-lo: #2a2937;
+
+  position: relative;
+  container-type: inline-size;
+  width: var(--ck-width);
+  /* Headroom for the extrusion and the contact shadow beneath the key. */
+  aspect-ratio: 1 / 1.2;
+  flex: 0 0 auto;
+  color: #1b1430;
+}
+
+/* Contact shadow — deliberately NOT tilted: it lives on the surface. */
+.ck-contact-shadow {
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  bottom: 2%;
+  height: 12%;
+  border-radius: 50%;
+  background: radial-gradient(
+    58% 52% at 50% 46%,
+    rgba(28, 18, 52, 0.42) 0%,
+    rgba(28, 18, 52, 0.18) 52%,
+    rgba(28, 18, 52, 0) 78%
+  );
+  filter: blur(3px);
+  filter: blur(1.1cqw);
+}
+
+/* Perspective stage — the key is seen slightly from above.
+   The perspective distance is deliberately long (2.5x the icon width) and the
+   key is inset horizontally, so the projected near edge stays inside the
+   component box and never bleeds into neighbouring layout. */
+.ck-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 250cqw;
+  perspective-origin: 50% 45%;
+}
+
+/* The key itself: square, inset so the perspective projection cannot spill. */
+.ck-key {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 0;
+  aspect-ratio: 1 / 1;
+  transform: rotateX(var(--ck-tilt));
+}
+
+/* Extruded side wall — only the strip below the top face is visible.
+   At a 16° viewing angle a 12% extrusion projects to roughly a 3% band of
+   keycap height, which reads as real depth without looking like a slab. */
+.ck-base {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4%;
+  bottom: -12%;
+  border-radius: var(--ck-radius);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.26) 0%,
+      rgba(255, 255, 255, 0) 16%
+    ),
+    linear-gradient(
+      180deg,
+      var(--ck-side-hi) 0%,
+      var(--ck-side-mid) 42%,
+      var(--ck-side-lo) 100%
+    );
+  box-shadow: 0 1.4cqw 2.2cqw rgba(26, 17, 48, 0.3);
+}
+
+/* Top face of the keycap. */
+.ck-cap {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--ck-radius);
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(
+    158deg,
+    var(--ck-cap-hi) 0%,
+    var(--ck-cap-mid) 44%,
+    var(--ck-cap-lo) 100%
+  );
+  box-shadow:
+    /* bevel: lit on the top-left, shaded on the bottom-right */
+    inset 0 0.85cqw 1.3cqw rgba(255, 255, 255, 0.9),
+    inset 0.9cqw 0 1.4cqw rgba(255, 255, 255, 0.4),
+    inset 0 -1cqw 1.5cqw rgba(36, 25, 64, 0.2),
+    inset -1cqw 0 1.5cqw rgba(36, 25, 64, 0.15),
+    /* the key resting above the surface */
+    0 0.5cqw 1cqw rgba(26, 17, 48, 0.16);
+}
+
+/* Concave dish the glyph sits in. */
+.ck-dish {
+  position: absolute;
+  inset: 7%;
+  border-radius: 24%;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.05) 46%,
+    rgba(36, 25, 64, 0.05) 100%
+  );
+  box-shadow:
+    inset 0 1.2cqw 1.8cqw rgba(36, 25, 64, 0.13),
+    inset 0 -0.7cqw 1.1cqw rgba(255, 255, 255, 0.55);
+}
+
+/* Specular sweep across the cap. */
+.ck-gloss {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    152deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.14) 26%,
+    rgba(255, 255, 255, 0) 46%
+  );
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+/* Platform glyph — identical box for every OS so proportions never shift. */
+.ck-glyph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 54%;
+  height: 54%;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  pointer-events: none;
+}
+/* Canvas windows stack on smaller screens instead of disappearing. */
+.canvas-panel-layer { width: min(100%, 42rem); display: grid; gap: .75rem; position: relative; z-index: 30; margin: 1rem auto; }
+.canvas-panel { position: relative; width: 100%; }
+@media (min-width: 1280px) {
+  .canvas-panel-layer { display: block; width: auto; margin: 0; position: static; z-index: auto; }
+  .canvas-chat { max-width: min(42rem, calc(100vw - 750px)); }
+  .canvas-panel { position: fixed; left: var(--panel-x); top: var(--panel-y); z-index: var(--panel-z); width: 345px; max-height: calc((100dvh - 140px) / 2); display: flex; flex-direction: column; }
+  .canvas-panel > div:nth-child(2) { min-height: 0; flex: 1 1 auto; max-height: 250px; }
+}
+.command-key-3d .ck-glyph { display: block; }
+/* Make footer links easy to see, click and tap. External profiles open in the top-level tab. */
+.footer-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-family: var(--font-mono), monospace; font-size: 11px; }
+.footer-link { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; padding: 8px 10px; color: #211631; border: 1px solid transparent; border-radius: 999px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; transition: background-color .18s, border-color .18s; }
+.footer-link:hover { background: rgba(255,255,255,.55); border-color: rgba(55,35,75,.2); }
+.footer-link:focus-visible { outline: 2px solid #4f3675; outline-offset: 2px; }
+
+/* Cinematic chapter navigation — transforms and opacity only. */
+.chapter-navigation { display:flex; align-items:stretch; justify-content:space-between; gap:12px; padding-top:26px; margin-top:32px; border-top:1px solid rgba(30,15,50,.2); }
+.chapter-link { position:relative; min-width:0; max-width:46%; padding:13px 18px; border:1px solid rgba(32,20,52,.19); border-radius:16px; background:rgba(255,255,255,.24); color:#211831; text-align:left; cursor:pointer; transition:transform .24s cubic-bezier(.22,1,.36,1),background .24s,border-color .24s; }
+.chapter-link:hover { transform:translateY(-3px); background:rgba(255,255,255,.48); border-color:rgba(32,20,52,.38); }
+.chapter-link:active { transform:scale(.975); }
+.chapter-link:focus-visible { outline:2px solid #4f3675; outline-offset:3px; }
+.chapter-link-next { margin-left:auto; text-align:right; }
+.chapter-overline { display:flex; align-items:center; gap:18px; font:500 9px var(--font-mono),monospace; text-transform:uppercase; letter-spacing:.12em; color:rgba(33,24,49,.65); }
+.chapter-link-next .chapter-overline { justify-content:flex-end; }
+.chapter-name { display:block; margin-top:7px; font:500 15px var(--font-sans),sans-serif; letter-spacing:-.02em; }
+.scene-transition { position:fixed; inset:0; z-index:10000; overflow:hidden; background:linear-gradient(118deg,var(--scene-tint,#d4c8f0),#e5d6ee 55%,#efe0bc); transform-origin:50% 100%; pointer-events:auto; touch-action:none; overscroll-behavior:contain; will-change:transform; }
+.scene-transition--cover { animation:scene-cover .42s cubic-bezier(.76,0,.24,1) both; }
+.scene-transition--reveal { transform-origin:50% 0%; animation:scene-reveal .54s cubic-bezier(.76,0,.24,1) both; }
+.scene-transition--backward.scene-transition--cover { transform-origin:50% 0%; }
+.scene-transition--backward.scene-transition--reveal { transform-origin:50% 100%; }
+.scene-transition-inner { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-between; padding:clamp(24px,5vw,68px); color:#251a35; }
+.scene-transition-meta,.scene-transition-rule { display:flex; justify-content:space-between; gap:12px; padding:14px 0; border-bottom:1px solid rgba(40,24,53,.22); font:500 10px var(--font-mono),monospace; letter-spacing:.12em; }
+.scene-transition-rule { border-bottom:0; border-top:1px solid rgba(40,24,53,.22); }
+.scene-transition-label { display:flex; flex-direction:column; gap:18px; opacity:0; animation:scene-label-in .34s .14s cubic-bezier(.22,1,.36,1) forwards; }
+.scene-transition-label span { font:500 10px var(--font-mono),monospace; letter-spacing:.2em; }
+.scene-transition-label strong { max-width:1050px; font:400 clamp(44px,8vw,112px)/.95 Georgia,serif; letter-spacing:-.055em; }
+.scene-transition--reveal .scene-transition-label { animation:scene-label-out .2s ease forwards; }
+.scene-outgoing { animation:scene-exit .34s cubic-bezier(.55,0,.75,.2) both; }
+.scene-incoming > div:first-child { animation:scene-content-in .60s cubic-bezier(.22,1,.36,1) both; }
+.scene-incoming > div:nth-child(2) > :nth-child(-n+3) { animation:scene-content-in .68s .05s cubic-bezier(.22,1,.36,1) both; }
+.scene-incoming h1,.scene-incoming h2 { animation:scene-heading-in .65s .05s cubic-bezier(.22,1,.36,1) both; }
+@keyframes scene-cover { from { transform:scaleY(0); } to { transform:scaleY(1); } }
+@keyframes scene-reveal { from { transform:scaleY(1); } to { transform:scaleY(0); } }
+@keyframes scene-label-in { from { opacity:0; transform:translate3d(0,18px,0); } to { opacity:1; transform:translate3d(0,0,0); } }
+@keyframes scene-label-out { to { opacity:0; transform:translate3d(0,-8px,0); } }
+@keyframes scene-exit { to { opacity:.5; transform:translate3d(0,-14px,0) scale(.992); } }
+@keyframes scene-content-in { from { opacity:0; transform:translate3d(0,24px,0); } to { opacity:1; transform:translate3d(0,0,0); } }
+@keyframes scene-heading-in { from { opacity:0; transform:translate3d(0,16px,0); } to { opacity:1; transform:translate3d(0,0,0); } }
+@media(max-width:640px) { .chapter-navigation { gap:8px; } .chapter-link { max-width:49%; padding:12px; } .chapter-name { font-size:13px; } .chapter-overline { font-size:8px; gap:8px; } .scene-transition-meta,.scene-transition-rule { font-size:8px; } }
+@media(prefers-reduced-motion:reduce) { .chapter-link { transition:none; } .chapter-link:hover,.chapter-link:active { transform:none; } .scene-transition,.scene-outgoing,.scene-incoming > div:first-child,.scene-incoming > div:nth-child(2) > :nth-child(-n+3),.scene-incoming h1,.scene-incoming h2 { animation:none !important; } }
