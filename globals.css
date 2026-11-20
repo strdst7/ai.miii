@@ -1,0 +1,407 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-pixel: var(--font-pixel), ui-monospace, monospace;
+}
+
+@property --b1x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+@property --b1y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 55%;
+}
+@property --b2x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 92%;
+}
+@property --b2y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 18%;
+}
+@property --b3x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 72%;
+}
+@property --b3y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 90%;
+}
+@property --b4x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 40%;
+}
+@property --b4y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 5%;
+}
+@property --c1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #c8b4f0;
+}
+@property --c2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f5e090;
+}
+@property --c3 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f7e89c;
+}
+@property --c4 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d4bcf6;
+}
+
+@keyframes meshFlow {
+  0% {
+    --b1x: 5%;
+    --b1y: 55%;
+    --b2x: 92%;
+    --b2y: 18%;
+    --b3x: 72%;
+    --b3y: 90%;
+    --b4x: 40%;
+    --b4y: 5%;
+  }
+  15% {
+    --b1x: 45%;
+    --b1y: 22%;
+    --b2x: 60%;
+    --b2y: 72%;
+    --b3x: 88%;
+    --b3y: 35%;
+    --b4x: 12%;
+    --b4y: 58%;
+  }
+  30% {
+    --b1x: 12%;
+    --b1y: 82%;
+    --b2x: 85%;
+    --b2y: 8%;
+    --b3x: 30%;
+    --b3y: 92%;
+    --b4x: 78%;
+    --b4y: 20%;
+  }
+  45% {
+    --b1x: 68%;
+    --b1y: 45%;
+    --b2x: 22%;
+    --b2y: 60%;
+    --b3x: 82%;
+    --b3y: 18%;
+    --b4x: 50%;
+    --b4y: 88%;
+  }
+  60% {
+    --b1x: 8%;
+    --b1y: 18%;
+    --b2x: 90%;
+    --b2y: 82%;
+    --b3x: 48%;
+    --b3y: 55%;
+    --b4x: 20%;
+    --b4y: 35%;
+  }
+  75% {
+    --b1x: 72%;
+    --b1y: 78%;
+    --b2x: 35%;
+    --b2y: 12%;
+    --b3x: 15%;
+    --b3y: 70%;
+    --b4x: 88%;
+    --b4y: 42%;
+  }
+  90% {
+    --b1x: 28%;
+    --b1y: 38%;
+    --b2x: 78%;
+    --b2y: 55%;
+    --b3x: 62%;
+    --b3y: 28%;
+    --b4x: 35%;
+    --b4y: 75%;
+  }
+  100% {
+    --b1x: 5%;
+    --b1y: 55%;
+    --b2x: 92%;
+    --b2y: 18%;
+    --b3x: 72%;
+    --b3y: 90%;
+    --b4x: 40%;
+    --b4y: 5%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #d4c8f0;
+  color: #18112c;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background-color: #d4c8f0;
+}
+
+.gradient-canvas {
+  background-color: var(--base-bg, #d4c8f0);
+  background-image:
+    radial-gradient(circle 58vmax at var(--b1x) var(--b1y), var(--c1), transparent 70%),
+    radial-gradient(circle 54vmax at var(--b2x) var(--b2y), var(--c2), transparent 68%),
+    radial-gradient(circle 56vmax at var(--b3x) var(--b3y), var(--c3), transparent 72%),
+    radial-gradient(circle 50vmax at var(--b4x) var(--b4y), var(--c4), transparent 68%);
+  animation: meshFlow 38s ease-in-out infinite;
+  transition: background-color 0.8s ease;
+}
+
+.glass-obsidian {
+  background: rgba(18, 14, 34, 0.86);
+  backdrop-filter: blur(22px) saturate(145%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 20px 50px rgba(18, 12, 38, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-obsidian-soft {
+  background: rgba(20, 16, 40, 0.74);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.glass-frosted {
+  background: rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow: 0 12px 32px rgba(28, 18, 56, 0.08);
+}
+
+.glass-chrome {
+  background: rgba(18, 14, 34, 0.42);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+@keyframes livePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(110, 231, 183, 0.7);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 5px rgba(110, 231, 183, 0);
+  }
+}
+
+.fp-apply-live {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #6ee7b7;
+  margin-right: 7px;
+  animation: livePulse 2.2s ease-in-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
+   OS-aware 3D Command Key icon
+   --------------------------------------------------------------------------
+   One unified keycap whose geometry, materials, lighting, shadows and
+   proportions never change. Only the brand glyph painted on the key changes
+   (Android robot / Windows logo / Linux Tux / macOS Command symbol).
+
+   Everything inside the icon is sized in `cqw` against the component's own
+   inline-size container, so a single `width` scales depth, bevels, blur radii
+   and glyph size together — the icon stays optically identical at 32px and at
+   320px, on desktop, tablet and mobile.
+   ========================================================================== */
+
+.command-key-3d {
+  /* Public knob — overridden by the `size` prop (numbers become px). */
+  --ck-width: clamp(52px, 12vw, 128px);
+
+  /* Keycap silhouette + viewing angle.
+     The radius is expressed in cqw (not %) so the cap and its extruded side
+     wall — which have different heights — share identical corner curvature. */
+  --ck-radius: 26cqw;
+  --ck-tilt: 16deg;
+
+  /* Soft-touch light keycap, lit from the top-left */
+  --ck-cap-hi: #fdfdff;
+  --ck-cap-mid: #edecf4;
+  --ck-cap-lo: #c8c6d8;
+  --ck-side-hi: #7e7d91;
+  --ck-side-mid: #4a4959;
+  --ck-side-lo: #2a2937;
+
+  position: relative;
+  container-type: inline-size;
+  width: var(--ck-width);
+  /* Headroom for the extrusion and the contact shadow beneath the key. */
+  aspect-ratio: 1 / 1.2;
+  flex: 0 0 auto;
+  color: #1b1430;
+}
+
+/* Contact shadow — deliberately NOT tilted: it lives on the surface. */
+.ck-contact-shadow {
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  bottom: 2%;
+  height: 12%;
+  border-radius: 50%;
+  background: radial-gradient(
+    58% 52% at 50% 46%,
+    rgba(28, 18, 52, 0.42) 0%,
+    rgba(28, 18, 52, 0.18) 52%,
+    rgba(28, 18, 52, 0) 78%
+  );
+  filter: blur(3px);
+  filter: blur(1.1cqw);
+}
+
+/* Perspective stage — the key is seen slightly from above.
+   The perspective distance is deliberately long (2.5x the icon width) and the
+   key is inset horizontally, so the projected near edge stays inside the
+   component box and never bleeds into neighbouring layout. */
+.ck-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 250cqw;
+  perspective-origin: 50% 45%;
+}
+
+/* The key itself: square, inset so the perspective projection cannot spill. */
+.ck-key {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 0;
+  aspect-ratio: 1 / 1;
+  transform: rotateX(var(--ck-tilt));
+}
+
+/* Extruded side wall — only the strip below the top face is visible.
+   At a 16° viewing angle a 12% extrusion projects to roughly a 3% band of
+   keycap height, which reads as real depth without looking like a slab. */
+.ck-base {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4%;
+  bottom: -12%;
+  border-radius: var(--ck-radius);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.26) 0%,
+      rgba(255, 255, 255, 0) 16%
+    ),
+    linear-gradient(
+      180deg,
+      var(--ck-side-hi) 0%,
+      var(--ck-side-mid) 42%,
+      var(--ck-side-lo) 100%
+    );
+  box-shadow: 0 1.4cqw 2.2cqw rgba(26, 17, 48, 0.3);
+}
+
+/* Top face of the keycap. */
+.ck-cap {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--ck-radius);
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(
+    158deg,
+    var(--ck-cap-hi) 0%,
+    var(--ck-cap-mid) 44%,
+    var(--ck-cap-lo) 100%
+  );
+  box-shadow:
+    /* bevel: lit on the top-left, shaded on the bottom-right */
+    inset 0 0.85cqw 1.3cqw rgba(255, 255, 255, 0.9),
+    inset 0.9cqw 0 1.4cqw rgba(255, 255, 255, 0.4),
+    inset 0 -1cqw 1.5cqw rgba(36, 25, 64, 0.2),
+    inset -1cqw 0 1.5cqw rgba(36, 25, 64, 0.15),
+    /* the key resting above the surface */
+    0 0.5cqw 1cqw rgba(26, 17, 48, 0.16);
+}
+
+/* Concave dish the glyph sits in. */
+.ck-dish {
+  position: absolute;
+  inset: 7%;
+  border-radius: 24%;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.05) 46%,
+    rgba(36, 25, 64, 0.05) 100%
+  );
+  box-shadow:
+    inset 0 1.2cqw 1.8cqw rgba(36, 25, 64, 0.13),
+    inset 0 -0.7cqw 1.1cqw rgba(255, 255, 255, 0.55);
+}
+
+/* Specular sweep across the cap. */
+.ck-gloss {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    152deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.14) 26%,
+    rgba(255, 255, 255, 0) 46%
+  );
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+/* Platform glyph — identical box for every OS so proportions never shift. */
+.ck-glyph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 54%;
+  height: 54%;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  pointer-events: none;
+}
