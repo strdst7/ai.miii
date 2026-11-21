@@ -34,6 +34,13 @@ import { MiiiMarkdown } from "./MiiiMarkdown";
 import { AiCanvasWorkspace } from "./AiCanvasWorkspace";
 import { CommandKey3D } from "./CommandKey3D";
 
+let messageIdCounter = 0;
+
+function createMessageId(prefix: "u" | "a" | "err") {
+  messageIdCounter += 1;
+  return `${prefix}-${messageIdCounter}`;
+}
+
 const VIOLET_ATMOSPHERE = {
   base: "#d4c8f0",
   c1: "#c8b4f0",
@@ -165,7 +172,7 @@ export function MiiiExperience({
     if (!trimmed || isSending) return;
 
     const userMsg: ChatMessage = {
-      id: `u-${Date.now()}`,
+      id: createMessageId("u"),
       role: "user",
       content: trimmed,
     };
@@ -190,7 +197,7 @@ export function MiiiExperience({
       });
       const data = await res.json();
       const assistantMsg: ChatMessage = {
-        id: `a-${Date.now()}`,
+        id: createMessageId("a"),
         role: "assistant",
         content:
           data.reply ||
@@ -203,7 +210,7 @@ export function MiiiExperience({
       setMessages((prev) => [
         ...prev,
         {
-          id: `err-${Date.now()}`,
+          id: createMessageId("err"),
           role: "assistant",
           content:
             "Connection hiccup while reaching the miii.ai assistant. Try again in a moment.",
