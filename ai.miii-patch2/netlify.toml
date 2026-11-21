@@ -1,0 +1,11 @@
+# Netlify configuration for miii.ai (Next.js App Router).
+# Framework detection picks up Next.js automatically; this file pins the
+# Node version and build settings so deploys are reproducible.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_TELEMETRY_DISABLED = "1"
