@@ -1,6 +1,8 @@
-# miii.ai redesigned preview
+# miii.ai library
 
-This Next.js site applies the supplied MiiiExperience / Canvas design to the miii.ai portfolio. The original static site remains in `/home/user/miii-ai` and was not overwritten.
+The home page opens the locally captured Spiral Archive at `/alice/library`. Phones use `/m/alice/library`. Both routes retain the Vue, Three.js and WebGL animation. The local stylesheet hides the captured portfolio navigation and account controls. A profile button opens Mia's biography and links inside the library. The library catalog uses this project's projects, learning modules, writing, resources, field notes and credentials. The previous Canvas design remains at `/classic`.
+
+The captured site belongs to its original owner. The archive is mounted read-only from outside this public repository; do not commit its scripts, images, music or branding. The adaptation is for local preview. Replace the original assets with licensed originals before publishing an equivalent site.
 
 ## Run locally
 
@@ -36,4 +38,4 @@ With Docker Engine and Docker Compose installed:
 docker compose up --build -d
 ```
 
-The container serves the production build on port 7077, bound to all host interfaces (`http://localhost:7077` on the host). Access from another machine requires a reachable host address and firewall rules permitting TCP 7077; `0.0.0.0` is a bind address, not a public URL. Stop it with `docker compose down`.
+The container serves the production build at `http://localhost:7077`, bound to the host loopback interface. It mounts the local archive at `~/remakes/afifmaahi-portfolio-com-alice-library/site`. Set `SPIRAL_ARCHIVE_SITE` to another absolute path before running Compose if the archive lives elsewhere. Stop it with `docker compose down`.

@@ -1,0 +1,28 @@
+/* Keep the original animated entrance and 3D hall, without the portfolio shell. */
+html,body,#app,.app-container,.main-content,.library-view,.dashboard-container{width:100%!important;height:100dvh!important;min-height:100dvh!important;margin:0!important;padding:0!important;max-width:none!important;overflow:hidden!important}
+.app-container>.sidebar,.library-view .dashboard-header,.library-view .dashboard-footer,.library-view .mobile-nav,.library-view .bottom-nav{display:none!important}
+.app-container>.main-content{flex:1 1 100%!important}
+.library-view .content-area{width:100%!important;height:100dvh!important;min-height:100dvh!important;margin:0!important;border-radius:0!important;flex:1 1 auto!important}
+.library-view .library-hall,.library-view .entrance{height:100%!important;min-height:100%!important;border-radius:0!important}
+/* The captured app switches to a separate mobile Vue route. Keep only its archive. */
+.mobile-app-container,.mobile-app,.mobile-content,.mobile-library,.mobile-library>.content{width:100%!important;height:100dvh!important;min-height:100dvh!important;max-width:none!important;margin:0!important;padding:0!important;overflow:hidden!important}
+.mobile-library>.mobile-header,.mobile-app>.pill-nav,.mobile-app-container .pill-nav{display:none!important}
+.mobile-library>.content>.entrance,.mobile-library>.content>.hall-canvas{width:100%!important;height:100dvh!important;min-height:100dvh!important;margin:0!important;border-radius:0!important}
+/* Account and chat actions belong to the original portfolio, not the library. */
+.library-view .sign-in,.library-view .alice-chip,.mobile-library .sign-in,.mobile-library .alice-chip{display:none!important}
+.entrance .gate-card>p,.entrance .gate-card>.member,.entrance .gate-card>.privacy{display:none!important}
+.mia-library-profile{position:fixed;z-index:10000;top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));font:14px/1.5 system-ui,sans-serif;color:#fff}
+.mia-profile-toggle,.mia-profile-close{border:1px solid rgba(255,255,255,.4);background:rgba(13,21,35,.86);color:#fff;cursor:pointer}
+.mia-profile-toggle{padding:9px 14px;border-radius:30px;backdrop-filter:blur(12px)}
+.mia-profile-toggle:focus-visible,.mia-profile-close:focus-visible,.mia-profile-links a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.mia-profile-panel{box-sizing:border-box;position:absolute;top:calc(100% + 10px);right:0;width:min(360px,calc(100vw - 32px));max-height:calc(100dvh - 86px);overflow:auto;padding:22px;border:1px solid rgba(255,255,255,.24);border-radius:16px;background:#111d2b;box-shadow:0 20px 65px rgba(0,0,0,.45)}
+.mia-profile-panel[hidden]{display:none}
+.mia-profile-heading{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.mia-profile-heading h2{margin:0;font-size:20px;line-height:1.2}
+.mia-profile-close{padding:5px 9px;border-radius:6px}
+.mia-profile-role{font-weight:600;color:#f1d6ad}
+.mia-profile-location{color:#c2d0da}
+.mia-profile-bio{line-height:1.65}
+.mia-profile-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.mia-profile-links a{padding:7px 10px;border:1px solid rgba(255,255,255,.4);border-radius:8px;color:#fff;text-decoration:none}
+@media(max-width:600px){.mia-profile-toggle{font-size:12px;padding:8px 11px}.mia-profile-panel{padding:16px}}

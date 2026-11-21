@@ -1,4 +1,4 @@
-import { MiiiExperience } from "@/components/MiiiExperience";
+import { redirect } from "next/navigation";
 import { VERIFIED_PROFILE, VERIFIED_PROJECTS, VERIFIED_WRITING, MODULES, RESOURCES } from "@/data/base";
 import { CERTIFICATION_ROWS } from "@/data/certifications-data";
 import linkedin from "@/data/linkedin.json";
@@ -31,4 +31,5 @@ const data: PortfolioPayload = {
   ],
   guestbook: []
 };
-export default function HomePage(){ return <MiiiExperience initialData={data} />; }
+export default function HomePage(){ redirect("/alice/library"); }
+export { data as portfolioData };
